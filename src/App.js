@@ -1,10 +1,11 @@
 import React from 'react';
-import Quiz from './containers/Quiz/Quiz'
+import QuizOptions from './containers/QuizOptions/QuizOptions';
+import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <Quiz />
+    <div className="App ui container" style={{paddingTop: "5%"}}>
+      <QuizOptions />
     </div>
   );
 }

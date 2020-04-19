@@ -2,7 +2,7 @@ import React from "react";
 import AnswerCard from "../../components/AnswerCard/AnswerCard";
 
 export function decodeString(str) {
-  return str.replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&eacute;/g,"é");
+  return str.replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&eacute;/g,"é").replace(/&rsquo;/g,"’").replace(/&Atilde;/g,"Ã");
 }
 
 class QuestionPage extends React.Component {

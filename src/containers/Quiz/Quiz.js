@@ -9,8 +9,10 @@ class Quiz extends React.Component {
     }
 
     async componentDidMount(){
+        const { difficultly, subject } = this.props 
+
         const response = await fetch(
-            "https://opentdb.com/api.php?amount=10&category=10&difficulty=medium&type=multiple"
+            `https://opentdb.com/api.php?amount=10&category=${subject}&difficulty=${difficultly}&type=multiple`
           );
           const questions = await response.json();
           this.setState({questions: questions.results})
@@ -26,7 +28,6 @@ class Quiz extends React.Component {
         this.setState({
             current_question: this.state.current_question + 1
         })
-        console.log(this.state.current_question)
     }
 
     render() {
@@ -52,7 +53,7 @@ class Quiz extends React.Component {
         } 
         return (
             <div>
-                Your Score was { score }
+                <h1>Your Score was { score } / 10</h1>
             </div>
         )
     }
