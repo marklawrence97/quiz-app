@@ -51,13 +51,20 @@ class QuestionPage extends React.Component {
   }
 
   handleRevealAnswers = () => {
-    this.setState({reveal_answers: true})
+    if (!this.state.reveal_answers) {
+      this.setState({reveal_answers: true})
+      if (this.state.user_correct) {
+        this.props.handleCorrectGuess()
+      }
+    }
   }
 
   render() {
     if (this.state.incorrect_answers.length === 0) {
       return <div>Loading</div>;
     }
+
+    const { score } = this.props
 
     return (
       <div>
@@ -73,8 +80,9 @@ class QuestionPage extends React.Component {
             correct_answer={this.state.correct_answer}/>
         ))}
         <button class="ui primary button" onClick={this.handleRevealAnswers}>
-            Reveal Answers!
+            Reveal Answer!
         </button>
+        <h1>Your Score: {score}</h1>
       </div>
     );
   }

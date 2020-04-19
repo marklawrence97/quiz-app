@@ -1,6 +1,6 @@
 import React from "react";
-import QuestionPage from "./QuestionPage";
-import { decodeString } from "./QuestionPage";
+import Question from "./Question";
+import { decodeString } from "./Question";
 
 test('Decode function parses " correctly', () => {
   expect(decodeString("Test data &quot;parses&quot;")).toBe(

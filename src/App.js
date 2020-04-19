@@ -1,10 +1,10 @@
 import React from 'react';
-import QuestionPage from './containers/QuestionPage/QuestionPage'
+import Quiz from './containers/Quiz/Quiz'
 
 function App() {
   return (
     <div className="App">
-      <QuestionPage />
+      <Quiz />
     </div>
   );
 }
